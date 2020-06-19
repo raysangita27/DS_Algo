@@ -1,0 +1,13 @@
+class Solution {
+    public int numTrees(int n) {
+        int[] countTree = new int[n+1];
+        countTree[0] = 1;
+        countTree[1] = 1;
+        for(int i = 2; i<=n; i++)
+        {
+            for(int j = 1; j<=i; j++)
+                countTree[i] = countTree[i]  + (countTree[j-1] * countTree[i-j]);
+        }
+        return countTree[n];
+    }
+}
