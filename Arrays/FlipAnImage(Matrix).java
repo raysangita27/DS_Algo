@@ -25,20 +25,14 @@ class Solution {
             while(s <= e)
             {
                
-                int temp = A[i][s];
-                A[i][s] = A[i][e];
+                int temp = A[i][s] ^ 1;
+                A[i][s] = A[i][e] ^ 1;
                 A[i][e] = temp;
                 
                 s++;
                 e--;
             }
         }
-        for(int i = 0; i<m; i++)
-        {
-            for(int j = 0; j<n; j++)
-                 A[i][j] = (A[i][j] == 1) ? 0 : 1;
-        }
-            
        return A; 
     }
 }
